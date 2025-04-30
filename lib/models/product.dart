@@ -40,4 +40,22 @@ class Product {
       gstRate: map['gstRate'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'basePrice': basePrice,
+      'gstRate': gstRate,
+    };
+  }
+
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      id: json['id'],
+      name: json['name'],
+      basePrice: json['basePrice'].toDouble(),
+      gstRate: json['gstRate'].toDouble(),
+    );
+  }
 }
