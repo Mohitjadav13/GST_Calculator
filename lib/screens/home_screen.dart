@@ -4,20 +4,31 @@ import 'cart_screen.dart';
 import 'transaction_history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final int initialIndex;
+  
+  const HomeScreen({
+    super.key,
+    this.initialIndex = 0,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  late int _selectedIndex;
   
   final List<Widget> _screens = const [
     ProductManagementScreen(),
     CartScreen(),
     TransactionHistoryScreen(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.initialIndex;
+  }
 
   @override
   Widget build(BuildContext context) {

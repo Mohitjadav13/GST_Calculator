@@ -124,18 +124,21 @@ class _ProductManagementScreenState extends State<ProductManagementScreen> {
                               style: const TextStyle(fontWeight: FontWeight.bold)),
                         ],
                       ),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            icon: const Icon(Icons.edit),
-                            onPressed: () => _showEditProductDialog(context, product),
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.delete),
-                            onPressed: () => _deleteProduct(product.id),
-                          ),
-                        ],
+                      trailing: Container(
+                        width: 100,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.edit),
+                              onPressed: () => _showEditProductDialog(context, product),
+                            ),
+                            IconButton(
+                              icon: const Icon(Icons.delete),
+                              onPressed: () => _deleteProduct(product.id),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
